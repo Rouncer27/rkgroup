@@ -3,8 +3,8 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `White Fields Calvary Church`,
-    description: `White Fields Calvary Church`,
+    title: `RK Group`,
+    description: `RK Group`,
     author: `@switchback4ever`,
   },
   plugins: [
