@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
+import Intro from "../components/Home/Intro"
 
 import {
   H1RalewayBlack,
@@ -95,6 +96,7 @@ const StyleGuild = styled.div`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Intro />
     <StyleGuild>
       <h1 className="h1-black">Headline One</h1>
       <h1 className="h1-green">Headline One</h1>
