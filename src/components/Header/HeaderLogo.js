@@ -10,7 +10,7 @@ const HeaderLogoSection = styled.div`
   background-color: ${colors.white};
 
   @media (min-width: 768px) {
-    width: calc(40%);
+    width: calc(35%);
     border-bottom-right-radius: 1.5rem;
   }
 

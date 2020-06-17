@@ -2,9 +2,8 @@ import { colors } from "./index"
 import { fonts, fontSizer } from "./index"
 
 const buttonOne = `
-  ${fontSizer(1.8, 2, 76.8, 150, 1.8)};
+  ${fontSizer(1.4, 2, 76.8, 150, 1.8)};
   display: inline-block;
-  min-width: 20rem;
   padding: 1rem 2rem;
   transition: all 0.3s ease;
   border: solid 0.1rem ${colors.colorAlt};

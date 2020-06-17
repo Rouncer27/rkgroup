@@ -93,8 +93,8 @@ const StyleGuild = styled.div`
   }
 `
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Home" />
     <Intro />
     <StyleGuild>

@@ -19,12 +19,12 @@ const HeaderSection = styled.header`
   }
 `
 
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <HeaderSection>
       <div className="wrapper">
         <HeaderLogo />
-        <HeaderNav />
+        <HeaderNav location={location} />
       </div>
     </HeaderSection>
   )
