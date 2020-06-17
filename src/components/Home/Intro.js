@@ -53,7 +53,6 @@ const IntroSection = styled.section`
 `
 
 const Intro = ({ intro }) => {
-  console.log(intro)
   return (
     <IntroSection>
       <div className="content">
