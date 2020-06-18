@@ -71,6 +71,7 @@ const IntroSection = styled.section`
 
 const Intro = ({ intro }) => {
   const linesGraphic = useRef(null)
+  const linesTrigger = useRef(null)
 
   useEffect(() => {
     const linesArray = [
@@ -86,13 +87,32 @@ const Intro = ({ intro }) => {
       scale: 1,
       ease: "back",
       delay: 0.5,
+      onComplete: () => startPara(),
       stagger: { amount: 0.5 },
     })
-    console.log(linesArray)
+    let count = 0
+    const startPara = () => {
+      linesArray.forEach((item, index) => {
+        if (index % 3) return
+        const scaleNumber = Math.random() + 0.75
+        console.log(count, ": ", scaleNumber)
+        count += 1
+        gsap.to(item, {
+          scale: scaleNumber,
+          scrollTrigger: {
+            trigger: linesTrigger.current,
+            start: "top 0%",
+            end: "bottom 0%",
+            markers: false,
+            scrub: 1.5,
+          },
+        })
+      })
+    }
   }, [])
 
   return (
-    <IntroSection>
+    <IntroSection ref={linesTrigger}>
       <div className="content">
         <div className="content__title">
           <h2>{intro.acf._rkg_homint_title}</h2>
