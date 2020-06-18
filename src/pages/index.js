@@ -10,6 +10,7 @@ import Services from "../components/Home/Services"
 import Process from "../components/Home/Process"
 import Testimonal from "../components/Home/Testimonial"
 import Safety from "../components/Home/Safety"
+import ContactInfo from "../components/Home/ContactInfo"
 
 const IndexPage = props => {
   const location = props.location
@@ -21,6 +22,7 @@ const IndexPage = props => {
     ourProcess,
     testimonal,
     safety,
+    contactInfo,
   } = props.data
   return (
     <Layout location={location}>
@@ -32,6 +34,7 @@ const IndexPage = props => {
       <Process ourProcess={ourProcess} />
       <Testimonal testimonal={testimonal} />
       <Safety safety={safety} />
+      <ContactInfo contactInfo={contactInfo} />
     </Layout>
   )
 }
@@ -158,6 +161,25 @@ export const homeQuery = graphql`
             }
           }
         }
+      }
+    }
+
+    contactInfo: wordpressAcfOptions {
+      options {
+        _rkg_main_company_logo {
+          alt_text
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 700) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        rkb_phone_number
+        rkb_location
+        rkb_email
+        rkb_company_name
       }
     }
   }

@@ -16,7 +16,7 @@ const SafetySection = styled.section`
     ${standardWrapper};
 
     @media (min-width: 768px) {
-      max-width: 80rem;
+      max-width: 80rem !important;
     }
   }
 
@@ -79,7 +79,6 @@ const Logo = styled.div`
 `
 
 const Safety = ({ safety }) => {
-  console.log(safety)
   return (
     <SafetySection>
       <div className="wrapper">
