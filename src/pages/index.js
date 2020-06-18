@@ -6,16 +6,18 @@ import SEO from "../components/seo"
 import Intro from "../components/Home/Intro"
 import Approach from "../components/Home/Approach"
 import Specialize from "../components/Home/Specialize"
+import Services from "../components/Home/Services"
 
 const IndexPage = props => {
   const location = props.location
-  const { intro, approach, specialize } = props.data
+  const { intro, approach, specialize, services } = props.data
   return (
     <Layout location={location}>
       <SEO title="Home" />
       <Intro intro={intro} />
       <Approach approach={approach} />
       <Specialize specialize={specialize} />
+      <Services services={services} />
     </Layout>
   )
 }
@@ -61,6 +63,18 @@ export const homeQuery = graphql`
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
+          }
+        }
+      }
+    }
+
+    services: wordpressPage(slug: { eq: "home" }) {
+      acf {
+        _rkg_servou_title
+        _rkg_servou_services {
+          title
+          service_points {
+            point
           }
         }
       }
