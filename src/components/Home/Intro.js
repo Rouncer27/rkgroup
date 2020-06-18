@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lines from "../Graphics/Lines"
 import CleaningTool from "../Graphics/CleaningTool"
 import { H1RalewayBlack, B1MontserratBlack, navOne } from "../../styles/helpers"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const IntroSection = styled.section`
   position: relative;
@@ -49,6 +52,7 @@ const IntroSection = styled.section`
     z-index: -1;
 
     .prefix__cls-2 {
+      display: block;
       fill: #f4f4f3;
     }
   }
@@ -66,6 +70,27 @@ const IntroSection = styled.section`
 `
 
 const Intro = ({ intro }) => {
+  const linesGraphic = useRef(null)
+
+  useEffect(() => {
+    const linesArray = [
+      ...linesGraphic.current.querySelectorAll(".prefix__cls-2"),
+    ]
+    gsap.set(linesArray, {
+      transformOrigin: "100%, 50%",
+      scale: 0,
+      autoAlpha: 0,
+    })
+    gsap.to(linesArray, {
+      autoAlpha: 1,
+      scale: 1,
+      ease: "back",
+      delay: 0.5,
+      stagger: { amount: 0.5 },
+    })
+    console.log(linesArray)
+  }, [])
+
   return (
     <IntroSection>
       <div className="content">
@@ -81,7 +106,7 @@ const Intro = ({ intro }) => {
           dangerouslySetInnerHTML={{ __html: intro.acf._rkg_homint_bold }}
         />
       </div>
-      <div className="lineGraphic">
+      <div ref={linesGraphic} className="lineGraphic">
         <Lines />
       </div>
       <div className="cleaningToolGraphic">
