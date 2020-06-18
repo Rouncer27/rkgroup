@@ -2,12 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 import Lines from "../Graphics/Lines"
+import CleaningTool from "../Graphics/CleaningTool"
 import { H1RalewayBlack, B1MontserratBlack, navOne } from "../../styles/helpers"
 
 const IntroSection = styled.section`
   position: relative;
   background-color: rgba(97, 128, 103, 0.5);
   height: 81rem;
+  margin-bottom: 5rem;
   z-index: 1;
 
   .content {
@@ -50,6 +52,17 @@ const IntroSection = styled.section`
       fill: #f4f4f3;
     }
   }
+
+  .cleaningToolGraphic {
+    position: absolute;
+    right: 2rem;
+    bottom: -6.5rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    max-width: 50rem;
+    margin: auto;
+    z-index: 1;
+  }
 `
 
 const Intro = ({ intro }) => {
@@ -70,6 +83,9 @@ const Intro = ({ intro }) => {
       </div>
       <div className="lineGraphic">
         <Lines />
+      </div>
+      <div className="cleaningToolGraphic">
+        <CleaningTool />
       </div>
     </IntroSection>
   )
