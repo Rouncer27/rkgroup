@@ -7,10 +7,19 @@ import Intro from "../components/Home/Intro"
 import Approach from "../components/Home/Approach"
 import Specialize from "../components/Home/Specialize"
 import Services from "../components/Home/Services"
+import Process from "../components/Home/Process"
+import Testimonal from "../components/Home/Testimonial"
 
 const IndexPage = props => {
   const location = props.location
-  const { intro, approach, specialize, services } = props.data
+  const {
+    intro,
+    approach,
+    specialize,
+    services,
+    ourProcess,
+    testimonal,
+  } = props.data
   return (
     <Layout location={location}>
       <SEO title="Home" />
@@ -18,6 +27,8 @@ const IndexPage = props => {
       <Approach approach={approach} />
       <Specialize specialize={specialize} />
       <Services services={services} />
+      <Process ourProcess={ourProcess} />
+      <Testimonal testimonal={testimonal} />
     </Layout>
   )
 }
@@ -75,6 +86,52 @@ export const homeQuery = graphql`
           title
           service_points {
             point
+          }
+        }
+      }
+    }
+
+    ourProcess: wordpressPage(slug: { eq: "home" }) {
+      acf {
+        _rkg_ourpro_title
+        _rkg_ourpro_step {
+          icon {
+            alt_text
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          icon_reversed {
+            alt_text
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          title
+          content
+        }
+      }
+    }
+
+    testimonal: wordpressPage(slug: { eq: "home" }) {
+      acf {
+        _rkg_test_testimonial
+        _rkg_test_background_image {
+          alt_text
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1800) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
           }
         }
       }
