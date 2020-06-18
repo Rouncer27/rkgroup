@@ -9,6 +9,7 @@ import Specialize from "../components/Home/Specialize"
 import Services from "../components/Home/Services"
 import Process from "../components/Home/Process"
 import Testimonal from "../components/Home/Testimonial"
+import Safety from "../components/Home/Safety"
 
 const IndexPage = props => {
   const location = props.location
@@ -19,6 +20,7 @@ const IndexPage = props => {
     services,
     ourProcess,
     testimonal,
+    safety,
   } = props.data
   return (
     <Layout location={location}>
@@ -29,6 +31,7 @@ const IndexPage = props => {
       <Services services={services} />
       <Process ourProcess={ourProcess} />
       <Testimonal testimonal={testimonal} />
+      <Safety safety={safety} />
     </Layout>
   )
 }
@@ -130,6 +133,27 @@ export const homeQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 1800) {
                 ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
+    }
+
+    safety: wordpressPage(slug: { eq: "home" }) {
+      acf {
+        _rkg_samat_title
+        _rkg_samat_content
+        _rkg_samat_logos {
+          link_required
+          link
+          logo {
+            alt_text
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
             }
           }
