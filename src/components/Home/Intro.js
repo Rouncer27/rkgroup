@@ -152,7 +152,7 @@ const Intro = ({ intro }) => {
       scrollTrigger: {
         trigger: linesTrigger.current,
         start: "bottom 85%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none none",
       },
     })
