@@ -105,6 +105,7 @@ const IntroSection = styled.section`
 const Intro = ({ intro }) => {
   const linesGraphic = useRef(null)
   const linesTrigger = useRef(null)
+  const cleaningTool = useRef(null)
 
   useEffect(() => {
     const linesArray = [
@@ -141,6 +142,20 @@ const Intro = ({ intro }) => {
         })
       })
     }
+
+    // Cleaning Tool animation. //
+    gsap.set(cleaningTool.current, { autoAlpha: 0, y: 250 })
+    gsap.to(cleaningTool.current, {
+      autoAlpha: 1,
+      y: 0,
+      ease: "back",
+      scrollTrigger: {
+        trigger: linesTrigger.current,
+        start: "bottom 85%",
+        markers: true,
+        toggleActions: "play none none none",
+      },
+    })
   }, [])
 
   return (
@@ -161,7 +176,7 @@ const Intro = ({ intro }) => {
       <div ref={linesGraphic} className="lineGraphic">
         <Lines />
       </div>
-      <div className="cleaningToolGraphic">
+      <div ref={cleaningTool} className="cleaningToolGraphic">
         <CleaningTool />
       </div>
     </IntroSection>
