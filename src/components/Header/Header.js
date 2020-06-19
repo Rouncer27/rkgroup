@@ -6,11 +6,14 @@ import HeaderNav from "./HeaderNav"
 import { medWrapper } from "../../styles/helpers"
 
 const HeaderSection = styled.header`
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
   z-index: 100;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
 
   .wrapper {
     display: flex;

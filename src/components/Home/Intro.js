@@ -4,25 +4,50 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lines from "../Graphics/Lines"
 import CleaningTool from "../Graphics/CleaningTool"
-import { H1RalewayBlack, B1MontserratBlack, navOne } from "../../styles/helpers"
+import {
+  H1RalewayBlack,
+  B1MontserratBlack,
+  navOne,
+  colors,
+} from "../../styles/helpers"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const IntroSection = styled.section`
   position: relative;
   background-color: rgba(97, 128, 103, 0.5);
-  height: 81rem;
+  background: linear-gradient(
+    115deg,
+    ${colors.colorAlt} 24%,
+    #b9c5ba 41%,
+    ${colors.colorTertiary} 89%
+  );
+  height: 50rem;
   margin-bottom: 5rem;
   z-index: 1;
 
+  @media (min-width: 768px) {
+    height: 81rem;
+  }
+
   .content {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 90rem;
+    padding: 0 4rem;
     text-align: center;
+
+    @media (min-width: 768px) {
+      top: 55%;
+      padding: 0 2rem;
+    }
+
+    @media (min-width: 1025px) {
+      padding: 0;
+    }
 
     &__title {
       h2 {
@@ -50,6 +75,7 @@ const IntroSection = styled.section`
     bottom: 0;
     width: 89rem;
     z-index: -1;
+    overflow: hidden;
 
     .prefix__cls-2 {
       display: block;
@@ -60,12 +86,19 @@ const IntroSection = styled.section`
   .cleaningToolGraphic {
     position: absolute;
     right: 2rem;
-    bottom: -6.5rem;
+    bottom: -3.25rem;
     left: 2rem;
     width: calc(100% - 4rem);
-    max-width: 50rem;
+    max-width: 25rem;
     margin: auto;
     z-index: 1;
+
+    @media (min-width: 768px) {
+      bottom: -6.5rem;
+      max-width: 50rem;
+    }
+    @media (min-width: 1025px) {
+    }
   }
 `
 
@@ -95,7 +128,6 @@ const Intro = ({ intro }) => {
       linesArray.forEach((item, index) => {
         if (index % 3) return
         const scaleNumber = Math.random() + 0.75
-        console.log(count, ": ", scaleNumber)
         count += 1
         gsap.to(item, {
           scale: scaleNumber,
