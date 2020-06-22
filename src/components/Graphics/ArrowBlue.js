@@ -5,33 +5,25 @@ const ArrowBlue = () => {
     <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="662.304"
-        height="384.62"
-        viewBox="0 0 662.304 384.62"
+        width="643.857"
+        height="369.535"
+        viewBox="0 0 643.857 369.535"
       >
-        <defs>
-          <filter
-            id="prefix__Path_2730"
-            width="662.304"
-            height="384.62"
-            x="0"
-            y="0"
-            filterUnits="userSpaceOnUse"
-          >
-            <feOffset dx="2" dy="5"></feOffset>
-            <feGaussianBlur result="blur" stdDeviation="2.5"></feGaussianBlur>
-            <feFlood floodOpacity="0.161"></feFlood>
-            <feComposite in2="blur" operator="in"></feComposite>
-            <feComposite in="SourceGraphic"></feComposite>
-          </filter>
-        </defs>
-        <g filter="url(#prefix__Path_2730)">
-          <path
-            fill="#345a78"
-            d="M445.228 330.216a3.461 3.461 0 10-4.894 4.894l19.509 19.509h-42.58a17.8 17.8 0 00-17.785 17.781v145.85a32.316 32.316 0 01-32.28 32.279h-502.836a32.316 32.316 0 01-32.279-32.279V227.032a32.316 32.316 0 0132.279-32.279H367.2a32.316 32.316 0 0132.28 32.279V341.2a3.461 3.461 0 106.922 0V227.032a39.246 39.246 0 00-39.2-39.2h-502.84a39.245 39.245 0 00-39.2 39.2V518.25a39.245 39.245 0 0039.2 39.2H367.2a39.246 39.246 0 0039.2-39.2V372.4a10.875 10.875 0 0110.863-10.863h41.326l-18.254 18.254a3.461 3.461 0 104.894 4.9l27.237-27.238z"
-            data-name="Path 2730"
-            transform="translate(180.34 -185.33)"
-          ></path>
+        <g data-name="Group 3290" transform="translate(-566.5 -2616.5)">
+          <g data-name="Group 3289" transform="translate(413.681 2482.283)">
+            <path
+              id="pathBlue"
+              d="M730.241 288.671V168.508s-7.488-29.791-33.663-29.791c-36 0-507.762-1-507.762-1s-32.5 5.545-32.5 35.333v293.29c0 9.632 9.159 33.912 32.239 33.912h511.027c12.788 0 30.939-14.317 30.939-30.039v-146.1s-.424-15.656 14.46-15.656h46.8"
+              className="prefix__cls-2"
+              data-name="Path 2774"
+            ></path>
+            <path
+              id="endBlue"
+              d="M766.5 281.76l26.676 26.855-25.888 25.885"
+              className="prefix__cls-2"
+              data-name="Path 2775"
+            ></path>
+          </g>
         </g>
       </svg>
     </div>

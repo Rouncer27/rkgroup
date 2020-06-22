@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import ArrowBlue from "../Graphics/ArrowBlue"
 import ArrowGreen from "../Graphics/ArrowGreen"
@@ -8,7 +10,10 @@ import {
   medWrapper,
   B1MontserratBlack,
   H1RalewayGreen,
+  colors,
 } from "../../styles/helpers"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const ServicesSection = styled.section`
   .wrapper {
@@ -87,6 +92,10 @@ const Item = styled.div`
         width: 100%;
         margin: 0;
       }
+
+      h3.title__green {
+        color: ${colors.colorTertiary};
+      }
     }
 
     .arrowGraphic {
@@ -106,6 +115,22 @@ const Item = styled.div`
       svg {
         width: 100%;
         height: 100%;
+
+        .prefix__cls-1 {
+          fill: none;
+          stroke: #618067;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 7px;
+        }
+
+        .prefix__cls-2 {
+          fill: none;
+          stroke: #345a78;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 7px;
+        }
       }
     }
   }
@@ -140,6 +165,63 @@ const Item = styled.div`
 `
 
 const Services = ({ services }) => {
+  const greenArrow = useRef(null)
+  const blueArrow = useRef(null)
+
+  const animatArrow = (path, end, trigger, points) => {
+    const pLength = path.getTotalLength()
+    gsap.set(end, { autoAlpha: 0 })
+    gsap.set(path, { strokeDasharray: pLength })
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top 50%",
+          end: "bottom 0%",
+          markers: false,
+          scrub: false,
+          toggleActions: "play none none reverse",
+        },
+      })
+      .fromTo(
+        path,
+        { strokeDashoffset: pLength },
+        { strokeDashoffset: 0, duration: 1.5 }
+      )
+      .to(end, { autoAlpha: 1, duration: 0.5 }, "=-0.2")
+      .fromTo(
+        points,
+        { autoAlpha: 0, scale: 1.2, y: 50, transformOrigin: "center, center" },
+        {
+          autoAlpha: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: { amount: 0.5 },
+        },
+        "=-1.25"
+      )
+  }
+
+  useEffect(() => {
+    const pathGreen = greenArrow.current.querySelector("#pathGreen")
+    const endGreen = greenArrow.current.querySelector("#endGreen")
+    const pointsGreen = [...document.querySelectorAll(".itemPoints__green li")]
+    const pathBlue = blueArrow.current.querySelector("#pathBlue")
+    const endBlue = blueArrow.current.querySelector("#endBlue")
+    const pointsBlue = [...document.querySelectorAll(".itemPoints__blue li")]
+
+    console.log("pointsGreen: ", pointsGreen)
+    console.log("pointsBlue: ", pointsBlue)
+
+    if (pathGreen === null && pathBlue === null) return
+    if (pathGreen !== null)
+      animatArrow(pathGreen, endGreen, greenArrow.current, pointsGreen)
+    if (pathBlue !== null)
+      animatArrow(pathBlue, endBlue, blueArrow.current, pointsBlue)
+  }, [])
+
   return (
     <ServicesSection id="services">
       <div className="wrapper">
@@ -148,18 +230,28 @@ const Services = ({ services }) => {
         </div>
         <div className="itemContainer">
           {services.acf._rkg_servou_services.map((serv, index) => {
-            const arrow = index % 2 ? <ArrowGreen /> : <ArrowBlue />
+            const arrow =
+              index % 2 ? (
+                <div ref={greenArrow}>
+                  <ArrowGreen />
+                </div>
+              ) : (
+                <div ref={blueArrow}>
+                  <ArrowBlue />
+                </div>
+              )
+            const colorArea = index % 2 ? "green" : "blue"
             const reversed = index % 2 ? true : false
 
             return (
               <Item key={index} reversed={reversed}>
                 <div className="itemTitle">
                   <div className="itemTitle__content">
-                    <h3>{serv.title}</h3>
+                    <h3 className={`title__${colorArea}`}>{serv.title}</h3>
                   </div>
                   <div className="arrowGraphic">{arrow}</div>
                 </div>
-                <div className="itemPoints">
+                <div className={`itemPoints itemPoints__${colorArea}`}>
                   <ul>
                     {serv.service_points.map((point, index) => {
                       return <li key={index}>{point.point}</li>

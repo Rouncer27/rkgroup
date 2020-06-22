@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   medWrapper,
   H1RalewayWhite,
@@ -8,6 +10,8 @@ import {
   colors,
 } from "../../styles/helpers"
 import Lines from "../Graphics/Lines"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const SpecializeSection = styled.section`
   position: relative;
@@ -98,8 +102,35 @@ const SpecializeSection = styled.section`
 `
 
 const Specialize = ({ specialize }) => {
+  const linesGraphic = useRef(null)
+  const linesTrigger = useRef(null)
+
+  useEffect(() => {
+    const linesArray = [
+      ...linesGraphic.current.querySelectorAll(".prefix__cls-2"),
+    ]
+    let count = 0
+    gsap.set(linesArray, { transformOrigin: "100%, 50%" })
+
+    linesArray.forEach((item, index) => {
+      if (index % 2) return
+      const scaleNumber = Math.random() + 0.75
+      count += 1
+      gsap.to(item, {
+        scale: scaleNumber,
+        scrollTrigger: {
+          trigger: linesTrigger.current,
+          start: "top 85%",
+          end: "bottom -15%",
+          markers: false,
+          scrub: 1.5,
+        },
+      })
+    })
+  }, [])
+
   return (
-    <SpecializeSection>
+    <SpecializeSection ref={linesTrigger}>
       <div className="wrapper">
         <div className="image">
           <Img
@@ -122,7 +153,7 @@ const Specialize = ({ specialize }) => {
           </div>
         </div>
       </div>
-      <div className="lineGraphic">
+      <div ref={linesGraphic} className="lineGraphic">
         <Lines />
       </div>
     </SpecializeSection>
