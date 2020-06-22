@@ -92,30 +92,46 @@ const Logo = styled.div`
 const Safety = ({ safety }) => {
   const triggerEle = useRef(null)
   useEffect(() => {
-    const allLogos = [...document.querySelectorAll(".singleLogo")]
+    const title = triggerEle.current.querySelector(".content__title")
+    const content = triggerEle.current.querySelector(".content__content")
+    const allLogos = [...triggerEle.current.querySelectorAll(".singleLogo")]
 
-    gsap.fromTo(
-      allLogos,
-      { autoAlpha: 0, y: 100 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        stagger: {
-          each: 0.25,
-        },
+    gsap
+      .timeline({
         scrollTrigger: {
           trigger: triggerEle.current,
           start: "top 75%",
           end: "bottom 0%",
           markers: false,
         },
-      }
-    )
+      })
+      .fromTo(
+        title,
+        { autoAlpha: 0, y: 100 },
+        { autoAlpha: 1, y: 0, duration: 1 }
+      )
+      .fromTo(
+        content,
+        { autoAlpha: 0, y: 100 },
+        { autoAlpha: 1, y: 0, duration: 1 },
+        "=-0.25"
+      )
+      .fromTo(
+        allLogos,
+        { autoAlpha: 0, y: 100 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          stagger: {
+            each: 0.25,
+          },
+        }
+      )
   }, [])
   return (
     <SafetySection>
-      <div className="wrapper">
+      <div className="wrapper" ref={triggerEle}>
         <div className="content">
           <div className="content__title">
             <h2>{safety.acf._rkg_samat_title}</h2>
@@ -124,7 +140,7 @@ const Safety = ({ safety }) => {
             className="content__content"
             dangerouslySetInnerHTML={{ __html: safety.acf._rkg_samat_content }}
           />
-          <div className="content__logos" ref={triggerEle}>
+          <div className="content__logos">
             {safety.acf._rkg_samat_logos.map((logo, index) => {
               return (
                 <Logo key={index} className="singleLogo">

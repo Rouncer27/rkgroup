@@ -56,7 +56,6 @@ const ContactInfoSection = styled.section`
 `
 
 const ContactInfo = ({ contactInfo }) => {
-  console.log(contactInfo)
   return (
     <ContactInfoSection>
       <div className="wrapper">

@@ -15,7 +15,7 @@ const Step = styled.div`
   height: 30rem;
   background-color: ${props =>
     props.isActive ? "#345a78" : "#cfddd1"} !important;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 
   @media (min-width: 768px) {
     width: calc(50% - 2rem);
@@ -146,8 +146,6 @@ const ProcessStep = ({ step }) => {
   const handleIsActive = () => {
     setIsActive(!isActive)
   }
-
-  console.log("isActive:  ", isActive)
 
   return (
     <Step onClick={handleIsActive} isActive={isActive}>

@@ -64,7 +64,6 @@ const FooterSection = styled.footer`
 
 const Footer = () => {
   const data = useStaticQuery(getData)
-  console.log(data)
   return (
     <FooterSection>
       <div className="wrapper">

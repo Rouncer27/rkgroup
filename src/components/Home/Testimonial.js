@@ -65,7 +65,6 @@ const TestimonialSection = styled.section`
 `
 
 const Testimonial = ({ testimonal }) => {
-  console.log(testimonal)
   return (
     <TestimonialSection>
       <div className="content">

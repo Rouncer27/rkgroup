@@ -212,9 +212,6 @@ const Services = ({ services }) => {
     const endBlue = blueArrow.current.querySelector("#endBlue")
     const pointsBlue = [...document.querySelectorAll(".itemPoints__blue li")]
 
-    console.log("pointsGreen: ", pointsGreen)
-    console.log("pointsBlue: ", pointsBlue)
-
     if (pathGreen === null && pathBlue === null) return
     if (pathGreen !== null)
       animatArrow(pathGreen, endGreen, greenArrow.current, pointsGreen)
