@@ -119,16 +119,16 @@ const Item = styled.div`
         .prefix__cls-1 {
           fill: none;
           stroke: #618067;
-          stroke-linecap: round;
-          stroke-linejoin: round;
+          ${"" /* stroke-linecap: round;
+          stroke-linejoin: round; */}
           stroke-width: 7px;
         }
 
         .prefix__cls-2 {
           fill: none;
           stroke: #345a78;
-          stroke-linecap: round;
-          stroke-linejoin: round;
+          ${"" /* stroke-linecap: round;
+          stroke-linejoin: round; */}
           stroke-width: 7px;
         }
       }
