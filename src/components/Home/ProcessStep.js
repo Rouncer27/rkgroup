@@ -2,10 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import {
-  standardWrapper,
-  H1RalewayGreen,
   colors,
-  H4RalewayWhite,
   H4RalewayBlack,
   B2MontserratWhite,
   B1MontserratWhite,

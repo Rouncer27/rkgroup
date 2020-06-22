@@ -1,14 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import {
-  standardWrapper,
-  H1RalewayGreen,
-  colors,
-  H4RalewayWhite,
-  H4RalewayBlack,
-  B2MontserratWhite,
-} from "../../styles/helpers"
+import { standardWrapper, H1RalewayGreen, colors } from "../../styles/helpers"
 
 import ProcessStep from "./ProcessStep"
 
