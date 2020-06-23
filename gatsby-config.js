@@ -3,9 +3,12 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `RK Group`,
-    description: `RK Group`,
+    title: `RK Group - We are a pipeline cleaning company`,
+    description: `We Specialize In Gas Pipelines, Liquid Pipelines, Mechanical Cleaning, Chemical Cleaning in Gas Pipelines, Small Inch Pipelines, Pre ILI Cleaning & Maintenance.`,
     author: `@switchback4ever`,
+    metaImg: `src/images/social-share-image-home-page.png`,
+    siteLogo: `src/images/rk-group-main-logo.png`,
+    siteUrl: `https://example.ca/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

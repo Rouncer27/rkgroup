@@ -15,6 +15,7 @@ import ContactInfo from "../components/Home/ContactInfo"
 const IndexPage = props => {
   const location = props.location
   const {
+    seoInfo,
     intro,
     approach,
     specialize,
@@ -26,7 +27,12 @@ const IndexPage = props => {
   } = props.data
   return (
     <Layout location={location}>
-      <SEO title="Home" />
+      <SEO
+        title={seoInfo.acf._swb_theme_meta_title}
+        description={seoInfo.acf._swb_theme_description}
+        metaImg={seoInfo.acf._swb_theme_image.localFile.publicURL}
+        location={location.pathname}
+      />
       <Intro intro={intro} />
       <Approach approach={approach} />
       <Specialize specialize={specialize} />
@@ -41,6 +47,18 @@ const IndexPage = props => {
 
 export const homeQuery = graphql`
   {
+    seoInfo: wordpressPage(slug: { eq: "home" }) {
+      acf {
+        _swb_theme_meta_title
+        _swb_theme_description
+        _swb_theme_image {
+          localFile {
+            publicURL
+          }
+        }
+      }
+    }
+
     intro: wordpressPage(slug: { eq: "home" }) {
       acf {
         _rkg_homint_title
