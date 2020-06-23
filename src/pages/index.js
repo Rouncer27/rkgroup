@@ -71,6 +71,16 @@ export const homeQuery = graphql`
         _rkg_speci_title
         _rkg_speci_items {
           item
+          icon {
+            alt_text
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 650) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
         }
         _rkg_speci_logo {
           alt_text
