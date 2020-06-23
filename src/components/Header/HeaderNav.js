@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 import HeaderNavItem from "./HeaderNavItem"
 import { colors, buttonOneBlue } from "../../styles/helpers"
@@ -93,7 +94,7 @@ const HeaderNav = ({ location }) => {
             ))}
         </ul>
         <div className="contactBtn">
-          <button>Contact Us</button>
+          <button onClick={() => scrollTo(`#contactUs`)}>Contact Us</button>
         </div>
       </div>
     </HeaderNavSection>

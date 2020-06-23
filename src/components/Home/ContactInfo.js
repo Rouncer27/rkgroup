@@ -58,7 +58,7 @@ const ContactInfoSection = styled.section`
 const ContactInfo = ({ contactInfo }) => {
   return (
     <ContactInfoSection>
-      <div className="wrapper">
+      <div id="contactUs" className="wrapper">
         <div className="title">
           <h2>Contact Us</h2>
         </div>
