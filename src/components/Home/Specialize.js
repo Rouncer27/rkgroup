@@ -46,8 +46,13 @@ const SpecializeSection = styled.section`
     }
 
     &__container {
-      width: 21.5rem;
-      margin-right: 5rem;
+      width: 15rem;
+      margin-right: 2.5rem;
+
+      @media (min-width: 768px) {
+        width: 21.5rem;
+        margin-right: 5rem;
+      }
     }
 
     &__title {
@@ -104,9 +109,11 @@ const SpecializeSection = styled.section`
 const SpecializeItem = styled.div`
   position: relative;
   width: calc(50%);
+  padding-top: 10rem;
 
   @media (min-width: 768px) {
     width: calc(33.33%);
+    padding-top: 12.5rem;
   }
 
   @media (min-width: 1024px) {
@@ -123,9 +130,15 @@ const SpecializeItem = styled.div`
 
     &__wrapper {
       position: relative;
-      width: 7rem;
-      height: 10rem;
+      width: 5rem;
+      height: 7rem;
       margin: 2rem auto;
+
+      @media (min-width: 768px) {
+        width: 7rem;
+        height: 10rem;
+        margin: 2rem auto;
+      }
 
       .gatsby-image-wrapper {
         position: absolute !important;
@@ -155,7 +168,6 @@ const Specialize = ({ specialize }) => {
   useEffect(() => {
     const listIcons = document.querySelector(".content__list")
     const specializedIcons = [...listIcons.querySelectorAll(":scope > div")]
-    console.log(specializedIcons)
 
     gsap.set(specializedIcons, { autoAlpha: 0, y: 100 })
     gsap
