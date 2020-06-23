@@ -57,7 +57,7 @@ const SafetySection = styled.section`
 `
 
 const Logo = styled.div`
-  width: calc(50% - 4rem);
+  width: calc(25% - 4rem);
   margin: 2rem;
 
   @media (min-width: 768px) {
@@ -70,10 +70,10 @@ const Logo = styled.div`
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 3rem;
+    padding: 1rem;
     margin: auto;
-    width: 15rem;
-    height: 15rem;
+    width: 9rem;
+    height: 9rem;
     background-color: ${colors.white};
     border-radius: 100%;
     overflow: hidden;
@@ -81,6 +81,7 @@ const Logo = styled.div`
     @media (min-width: 768px) {
       width: 20rem;
       height: 20rem;
+      padding: 3rem;
     }
 
     .gatsby-image-wrapper {
