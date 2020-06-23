@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import { createSlug } from "../../utils/helperFunc"
 import { navOne } from "../../styles/helpers"
 
 const NavItem = styled.li`

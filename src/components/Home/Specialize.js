@@ -6,9 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   medWrapper,
   H1RalewayWhite,
-  H3RalewayWhite,
   colors,
-  H2RalewayBlack,
   B1MontserratWhite,
 } from "../../styles/helpers"
 import Lines from "../Graphics/Lines"

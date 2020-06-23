@@ -4,7 +4,7 @@ import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 import HeaderNavItem from "./HeaderNavItem"
-import { colors, buttonOneBlue } from "../../styles/helpers"
+import { buttonOneBlue } from "../../styles/helpers"
 
 const HeaderNavSection = styled.div`
   width: 100%;

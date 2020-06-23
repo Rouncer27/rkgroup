@@ -81,7 +81,8 @@ const Footer = () => {
 
         <div className="footerNav">
           <p>
-            <a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a>
+            <a href="/privacy-policy">Privacy Policy</a> |{" "}
+            <a href="/disclaimer">Disclaimer</a>
           </p>
         </div>
 

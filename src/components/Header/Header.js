@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import HeaderLogo from "./HeaderLogo"
 import HeaderNav from "./HeaderNav"
-import { medWrapper } from "../../styles/helpers"
 
 const HeaderSection = styled.header`
   z-index: 100;
