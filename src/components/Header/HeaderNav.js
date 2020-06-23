@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
@@ -56,7 +56,8 @@ const HeaderNavSection = styled.div`
     width: 30%;
     margin-left: 4rem;
 
-    button {
+    button,
+    a {
       ${buttonOneBlue};
     }
   }
@@ -80,6 +81,17 @@ const getData = graphql`
 const HeaderNav = ({ location }) => {
   const data = useStaticQuery(getData)
   const menuItems = data.mainMenu.items
+
+  const noHash = "/#contactUs".split("#").join("/").split("/")[1]
+  const locationMas = location.pathname.split("/").join("")
+  const linkSamePage = noHash === locationMas
+
+  const contactBtn = linkSamePage ? (
+    <button onClick={() => scrollTo(`#contactUs`)}>Contact Us</button>
+  ) : (
+    <Link to={`/#contactUs`}>Contact Us</Link>
+  )
+
   return (
     <HeaderNavSection>
       <div className="navWrapper">
@@ -93,9 +105,7 @@ const HeaderNav = ({ location }) => {
               />
             ))}
         </ul>
-        <div className="contactBtn">
-          <button onClick={() => scrollTo(`#contactUs`)}>Contact Us</button>
-        </div>
+        <div className="contactBtn">{contactBtn}</div>
       </div>
     </HeaderNavSection>
   )
