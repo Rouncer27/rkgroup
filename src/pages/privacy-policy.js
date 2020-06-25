@@ -61,8 +61,8 @@ const PrivacyPolicy = props => {
   return (
     <Layout location={location}>
       <SEO
-        title="Privacy Policy - RG Group Incorporated"
-        description="Protecting your personal information Your privacy is important to us. It is RG Group Incorporated policy to respect your privacy regarding any information we may collect while operating our website."
+        title="Privacy Policy - RK Group Incorporated"
+        description="Protecting your personal information Your privacy is important to us. It is RK Group Incorporated policy to respect your privacy regarding any information we may collect while operating our website."
         location={props.location.pathname}
       />
       <PrivacyPolicyStyled>
@@ -72,7 +72,7 @@ const PrivacyPolicy = props => {
         <div>
           <h2>Protecting your personal information</h2>
           <p>
-            Your privacy is important to us. It is RG Group Incorporated policy
+            Your privacy is important to us. It is RK Group Incorporated policy
             to respect your privacy regarding any information we may collect
             while operating our website. Accordingly, we have developed this
             privacy policy in order for you to understand how we collect, use,
@@ -118,8 +118,8 @@ const PrivacyPolicy = props => {
           <p>
             We are committed to conducting our business in accordance with these
             principles in order to ensure that the confidentiality of personal
-            information is protected and maintained. RG Group Incorporated may
-            change this privacy policy from time to time at RG Group
+            information is protected and maintained. RK Group Incorporated may
+            change this privacy policy from time to time at RK Group
             Incorporated sole discretion.
           </p>
           <p>
@@ -134,7 +134,7 @@ const PrivacyPolicy = props => {
           </p>
           <p>
             This site has reasonable security measures in place to protect
-            against the loss, misuse and interception by third parties. RG Group
+            against the loss, misuse and interception by third parties. RK Group
             Incorporated assumes no liability for interception, alteration or
             misuse of information transmitted over the Internet. Only employees
             who need the information to perform a specific job have access to
@@ -198,7 +198,7 @@ const PrivacyPolicy = props => {
             rkleim@rk-group.ca
           </p>
           <p>
-            What about spam? You will not receive marketing e-mail from RG Group
+            What about spam? You will not receive marketing e-mail from RK Group
             Incorporated unless you have consented to receive it. From time to
             time we may use e-mail as a way to keep in touch with our existing
             customers and other interested individuals. However, we do not send

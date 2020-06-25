@@ -32,7 +32,7 @@ const Disclaimer = props => {
   return (
     <Layout location={location}>
       <SEO
-        title="Disclaimer - RG Group Incorporated"
+        title="Disclaimer - RK Group Incorporated"
         description="The information contained in this website is for general information purposes only. This website makes no representations or warranties, express or implied."
         location={props.location.pathname}
       />
@@ -44,13 +44,13 @@ const Disclaimer = props => {
           <p>
             The information contained in this website is for general information
             purposes only. This website makes no representations or warranties,
-            express or implied. RG Group Incorporated makes no representations
+            express or implied. RK Group Incorporated makes no representations
             or warranties related to this website or the information and
-            materials provided on this website. RG Group Incorporated does not
+            materials provided on this website. RK Group Incorporated does not
             warrant that this website will be available at any or all times, or
             that the information contained on this website is accurate,
             complete, non-misleading or true. No information on this website is
-            intended as advice of any kind. RG Group Incorporated makes no
+            intended as advice of any kind. RK Group Incorporated makes no
             representations or warranties of any kind, express or implied, about
             the completeness, accuracy, reliability, suitability or availability
             with respect to the website or the information, products, services,
@@ -59,7 +59,7 @@ const Disclaimer = props => {
             own risk.
           </p>
           <p>
-            RG Group Incorporated assumes no liability in relation to the
+            RK Group Incorporated assumes no liability in relation to the
             contents of, or use of this website including any indirect, special
             or consequential loss or for any business losses, loss of revenue,
             income, profits or anticipated savings, loss of contracts or
@@ -67,8 +67,8 @@ const Disclaimer = props => {
             corruption of information or data.
           </p>
           <p>
-            The materials on RG Group Incorporated website are provided on an
-            ‘as is’ basis. RG Group Incorporated makes no warranties, expressed
+            The materials on RK Group Incorporated website are provided on an
+            ‘as is’ basis. RK Group Incorporated makes no warranties, expressed
             or implied, and hereby disclaims and negates all other warranties
             including, without limitation, implied warranties or conditions of
             merchantability, fitness for a particular purpose, or
@@ -76,14 +76,14 @@ const Disclaimer = props => {
             rights.
           </p>
           <p>
-            Further, RG Group Incorporated does not warrant or make any
+            Further, RK Group Incorporated does not warrant or make any
             representations concerning the accuracy, likely results, or
             reliability of the use of the materials on its website or otherwise
             relating to such materials or on any sites linked to this site.
           </p>
           <p>
             Through this website you are able to link to other websites which
-            are not under the control of RG Group Incorporated. We have no
+            are not under the control of RK Group Incorporated. We have no
             control over the nature, content and availability of those sites.
             The inclusion of any links does not necessarily imply a
             recommendation or endorse the views expressed within them.
@@ -100,12 +100,12 @@ const Disclaimer = props => {
         </div>
         <div>
           <p>
-            Copyright © RG Group Incorporated All Rights Reserved. All text,
+            Copyright © RK Group Incorporated All Rights Reserved. All text,
             images, graphics, and other materials on this website are subject to
-            the copyright and other intellectual property rights of RG Group
+            the copyright and other intellectual property rights of RK Group
             Incorporated, unless otherwise stated. These materials may not be
             reproduced, distributed, modified or reposted to other websites
-            without the express written permission of RG Group Incorporated.
+            without the express written permission of RK Group Incorporated.
           </p>
         </div>
       </DisclaimerStyled>
