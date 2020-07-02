@@ -8,7 +8,7 @@ module.exports = {
     author: `@switchback4ever`,
     metaImg: `src/images/social-share-image-home-page.png`,
     siteLogo: `src/images/rk-group-main-logo.png`,
-    siteUrl: `https://example.ca/`,
+    siteUrl: `https://rk-group.ca/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,6 +33,28 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "",
+        head: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://rk-group.ca/",
+        sitemap: "https://rk-group.ca/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://rk-group.ca/`,
+      },
+    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-source-wordpress",
       options: {
