@@ -24,15 +24,22 @@ const HeaderNavSection = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 70%;
+    justify-content: center;
+    width: calc(70%);
+
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+      width: calc(70% - 0rem);
+    }
 
     li {
       position: relative;
       margin: auto 1rem;
+      width: calc(50% - 2rem);
+      text-align: center;
 
       &::after {
-        display: block;
+        display: none;
         position: absolute;
         top: 0.5rem;
         right: -1.25rem;
@@ -41,10 +48,21 @@ const HeaderNavSection = styled.div`
         background-color: #464646;
         content: "";
       }
+
+      @media (min-width: 768px) {
+        width: auto;
+        margin: auto 1rem;
+
+        &::after {
+          display: block;
+        }
+      }
     }
 
     li:last-of-type {
-      margin: auto 0 auto 1rem;
+      @media (min-width: 768px) {
+        margin: auto 0 auto 1rem;
+      }
 
       &::after {
         display: none;
@@ -53,8 +71,11 @@ const HeaderNavSection = styled.div`
   }
 
   .contactBtn {
-    width: 30%;
-    margin-left: 4rem;
+    width: calc(30%);
+
+    @media (min-width: 768px) {
+      margin-left: 4rem;
+    }
 
     button,
     a {

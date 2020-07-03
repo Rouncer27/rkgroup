@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import { navOne } from "../../styles/helpers"
+import { navOne, fontSizer, buttonOneBlue } from "../../styles/helpers"
 
 const NavItem = styled.li`
   a,
